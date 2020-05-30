@@ -7,7 +7,11 @@ import java.nio.file.Paths;
 
 public class App {
     public static void main(String args[]){
-        LinkedListPalavra lp = new LinkedListPalavra();
-        ManipulaTextos.leLivro(lp);
+        ListaStopwords ls = new ListaStopwords();
+        ManipulaStopWords.guardaStopWords(ls);
+        System.out.println(ls);
+
+
+
     }
 }

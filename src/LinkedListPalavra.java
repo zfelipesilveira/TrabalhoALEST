@@ -104,7 +104,7 @@ public class LinkedListPalavra {
         StringBuilder s = new StringBuilder();
         Node aux = head;
         while (aux != null) {
-            s.append(aux.palavra.toString());
+            s.append(aux.palavra.getPalavra().toString());
             s.append("\n");
             aux = aux.next;
         }
