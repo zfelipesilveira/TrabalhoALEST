@@ -6,7 +6,7 @@ public class Teste2 {
         System.out.println(stopwords);
 
         LinkedListPalavra lp = new LinkedListPalavra();
-        ManipulaTextos.leLivro(lp);
+        ManipulaTextos.leLivro(lp, ls);
         System.out.println(lp.toString());
         
        

@@ -62,7 +62,7 @@ public class LinkedListPalavra {
     /**
      * Adiciona um elemento ao final da lista.
      *
-     * @param element elemento a ser adicionado ao final da lista
+     * @param palavra elemento a ser adicionado ao final da lista
      */
     public void add(Palavra palavra) { // O(1)
         Node n = new Node(palavra);
@@ -105,6 +105,7 @@ public class LinkedListPalavra {
         Node aux = head;
         while (aux != null) {
             s.append(aux.palavra.getPalavra().toString());
+            s.append(aux.palavra.getListaPaginas());
             s.append("\n");
             aux = aux.next;
         }
@@ -117,7 +118,7 @@ public class LinkedListPalavra {
      * Insere um elemento em uma determinada posicao da lista.
      *
      * @param index a posicao da lista onde o elemento sera inserido
-     * @param element elemento a ser inserido
+     * @param palavra elemento a ser inserido
      * @throws IndexOutOfBoundsException se (index < 0 || index > size())
      */
     public void add(int index, Palavra palavra) {
@@ -187,7 +188,7 @@ public class LinkedListPalavra {
      * elemento indicado.
      *
      * @param index a posicao da lista
-     * @param element o elemento a ser armazenado na lista
+     * @param palavra o elemento a ser armazenado na lista
      * @return o elemento armazenado anteriormente na posicao da lista
      * @throws IndexOutOfBoundsException se (index < 0 || index >= size())
      */
@@ -215,7 +216,7 @@ public class LinkedListPalavra {
     /**
      * Remove a primeira ocorrencia do elemento na lista, se estiver presente.
      *
-     * @param element o elemento a ser removido
+     * @param palavra o elemento a ser removido
      * @return true se a lista contem o elemento especificado
      */
     public boolean remove(Palavra palavra) {
@@ -289,7 +290,7 @@ public class LinkedListPalavra {
      * Retorna o indice da primeira ocorrencia do elemento na lista, ou -1 se a
      * lista nao contem o elemento.
      *
-     * @param element o elemento a ser buscado
+     * @param palavra o elemento a ser buscado
      * @return o indice da primeira ocorrencia do elemento na lista, ou -1 se a
      * lista nao contem o elemento
      */
@@ -307,7 +308,7 @@ public class LinkedListPalavra {
     /**
      * Retorna true se a lista contem o elemento especificado.
      *
-     * @param element o elemento a ser testado
+     * @param palavra o elemento a ser testado
      * @return true se a lista contem o elemento especificado
      */
     public boolean contains(Palavra palavra) { // O(n)

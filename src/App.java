@@ -9,7 +9,14 @@ public class App {
     public static void main(String args[]){
         ListaStopwords ls = new ListaStopwords();
         ManipulaStopWords.guardaStopWords(ls);
-        System.out.println(ls);
+
+        LinkedListPalavra lp = new LinkedListPalavra();
+        ManipulaTextos.leLivro(lp, ls);
+
+        System.out.println(lp);
+
+        // Criar lista na classe Palavra
+
 
 
 
