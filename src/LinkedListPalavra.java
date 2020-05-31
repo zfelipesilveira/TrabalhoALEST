@@ -104,8 +104,7 @@ public class LinkedListPalavra {
         StringBuilder s = new StringBuilder();
         Node aux = head;
         while (aux != null) {
-            s.append(aux.palavra.getPalavra().toString());
-            s.append(aux.palavra.getListaPaginas());
+            s.append(aux.palavra.toString());
             s.append("\n");
             aux = aux.next;
         }
@@ -311,7 +310,7 @@ public class LinkedListPalavra {
      * @param palavra o elemento a ser testado
      * @return true se a lista contem o elemento especificado
      */
-    public boolean contains(Palavra palavra) { // O(n)
+    public boolean contains(String palavra) { // O(n)
         Node aux = head;
         for (int i = 0; i < count; i++) {
             if (aux.palavra.getPalavra().equals(palavra)) {

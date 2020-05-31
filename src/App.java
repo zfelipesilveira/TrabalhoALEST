@@ -17,6 +17,8 @@ public class App {
 
         // Criar lista na classe Palavra
 
+        //Mudei o método contains da LinkedListPalavra
+
 
 
 

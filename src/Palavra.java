@@ -5,7 +5,7 @@ public class Palavra {
 
     public Palavra(String palavra){
         this.palavra = palavra;
-
+        listapaginas = new ListaPaginas();
     }
 
     public String getPalavra(){

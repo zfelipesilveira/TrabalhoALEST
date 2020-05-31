@@ -37,7 +37,8 @@ public class ManipulaTextos {
         int contWords = 0;
         int contStopwords = 0;
         int aux = 0;
-        while (aux < numPaginas) {
+        //while (aux < numPaginas) {
+        for(int j = 0; j<=numPaginas; j++){
             for (int i = 1; i <= 40; i++) {
                 //System.out.println("\nPalavras da linha " + i + ": ");
                 linhas[i - 1] = linhas[i - 1].replaceAll("\\t", " "); // substitui tab por espaco em branco
@@ -48,17 +49,18 @@ public class ManipulaTextos {
                     s = s.toLowerCase();
                     //System.out.println("->" + s);
                     //System.out.println(aux);
-                    contWords = contWords +1;
-                    if (ls.contains(s)) contStopwords = contStopwords +1;
+                    contWords = contWords + 1;
+                    if (ls.contains(s)) contStopwords = contStopwords + 1;
                     Palavra p = new Palavra(s);
-                    if(lp.contains(p)) p.inserePagina(aux);
+                    if (lp.contains(s)) p.inserePagina(aux);
                     else lp.add(p);
                 }
-
             }
-            aux++;
+            //}
+            //System.out.println(aux);
+            //aux++;
         }
-        System.out.println(contStopwords);
-        System.out.println(contWords);
+        //System.out.println(contStopwords);
+        //System.out.println(contWords);
     }
 }
