@@ -4,5 +4,12 @@ public class Teste2 {
         ManipulaStopWords.guardaStopWords(ls);
         String stopwords = ls.toString();
         System.out.println(stopwords);
+
+        LinkedListPalavra lp = new LinkedListPalavra();
+        ManipulaTextos.leLivro(lp);
+        System.out.println(lp.toString());
+        
+       
+        
     }
 }

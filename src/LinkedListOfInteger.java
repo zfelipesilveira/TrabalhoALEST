@@ -229,23 +229,7 @@ public class LinkedListOfInteger {
      * @return o elemento que foi removido da lista
      * @throws IndexOutOfBoundsException se (index < 0 || index >= size())
      */
-    public Integer removeByIndex(int index) {
-        // Primeiro verifica se index eh valido
-        if (index < 0 || index >= count) {
-            throw new IndexOutOfBoundsException();
-        }
-
-        Node aux = head;
-        if (index == 0) { // remocao do primeiro elemento da lista
-            if (tail == head) // se tiver apenas um elemento
-                tail = null;
-            head = head.next;
-            count--;
-            return aux.element;
-        }
-        int c = 0;
-        while (c < index - 1) {
-            aux = aux.next;
+    t
             c++;
         }
         Integer element = aux.next.element;
