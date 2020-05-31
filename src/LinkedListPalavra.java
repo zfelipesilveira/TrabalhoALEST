@@ -338,8 +338,7 @@ public class LinkedListPalavra {
         for (int i = 0; i < count; i++) {
             Palavra p1= aux.palavra;
             if (aux.palavra.getPalavra().equals(pal)) {
-                //arrumar aqui
-                p1.inserePagina(n);
+                if(!p1.getListaPaginas().contains(n)) p1.inserePagina(n);
             }
             aux = aux.next;
         }
