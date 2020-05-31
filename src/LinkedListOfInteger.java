@@ -117,7 +117,7 @@ public class LinkedListOfInteger {
     /**
      * Insere um elemento em uma determinada posicao da lista.
      *
-     * @param index a posicao da lista onde o elemento sera inserido
+     * @param index   a posicao da lista onde o elemento sera inserido
      * @param element elemento a ser inserido
      * @throws IndexOutOfBoundsException se (index < 0 || index > size())
      */
@@ -157,7 +157,7 @@ public class LinkedListOfInteger {
      * Substitui o elemento armanzenado em uma determinada posicao da lista pelo
      * elemento indicado.
      *
-     * @param index a posicao da lista
+     * @param index   a posicao da lista
      * @param element o elemento a ser armazenado na lista
      * @return o elemento armazenado anteriormente na posicao da lista
      * @throws IndexOutOfBoundsException se (index < 0 || index >= size())
@@ -220,92 +220,6 @@ public class LinkedListOfInteger {
         }
 
         return false;
-    }
-
-    /**
-     * Remove o elemento de uma determinada posicao da lista.
-     *
-     * @param index a posicao da lista
-     * @return o elemento que foi removido da lista
-     * @throws IndexOutOfBoundsException se (index < 0 || index >= size())
-     */
-    t
-            c++;
-        }
-        Integer element = aux.next.element;
-        if (tail == aux.next) // se remocao do ultimo elemento da lista
-            tail = aux;
-        aux.next = aux.next.next;
-        count--;
-        return element;
-    }
-
-    /**
-     * Retorna o indice da primeira ocorrencia do elemento na lista, ou -1 se a
-     * lista nao contem o elemento.
-     *
-     * @param element o elemento a ser buscado
-     * @return o indice da primeira ocorrencia do elemento na lista, ou -1 se a
-     * lista nao contem o elemento
-     */
-    public int indexOf(Integer element) {
-        Node aux = head;
-        for (int i = 0; i < count; i++) {
-            if (aux.element.equals(element)) {
-                return i;
-            }
-            aux = aux.next;
-        }
-        return -1;
-    }
-
-    /**
-     * Retorna true se a lista contem o elemento especificado.
-     *
-     * @param element o elemento a ser testado
-     * @return true se a lista contem o elemento especificado
-     */
-    public boolean contains(Integer element) { // O(n)
-        Node aux = head;
-        for (int i = 0; i < count; i++) {
-            if (aux.element.equals(element)) {
-                return true;
-            }
-            aux = aux.next;
-        }
-        return false;
-    }
-
-    /**
-     * Retorna um arranjo com uma copia de um subconjunto dos elementos da
-     * lista.
-     *
-     * @param fromIndex a posição inicial ("inclusive") dos elementos a serem
-     * incluídos
-     * @param toIndex a posição final ("exclusive") dos elementos a serem
-     * incluídos
-     * @return um arranjo com um subconjunto da lista
-     * @throws IndexOutOfBoundsException se (fromIndex < 0 || toIndex > size())
-     * @throws IllegalArgumentException se (fromIndex > toIndex)
-     */
-    public Integer[] subList(int fromIndex, int toIndex) {
-        if (fromIndex < 0 || toIndex > size())
-            throw new IndexOutOfBoundsException("Índices inválidos!");
-        if (fromIndex > toIndex)
-            throw new IllegalArgumentException("fromIndex deve ser menor que toIndex!");
-
-        Integer []a = new Integer[toIndex-fromIndex];
-        Node aux = head;
-        for (int i = 0; i < fromIndex; i++) { // para "chegar" ate a posicao fromIndex
-            aux = aux.next;
-        }
-        int pos = 0;
-        for (int i = fromIndex; i < toIndex; i++) {
-            a[pos] = aux.element;
-            aux = aux.next;
-            pos++;
-        }
-        return a;
     }
 
 }
