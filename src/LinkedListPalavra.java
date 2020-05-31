@@ -313,7 +313,7 @@ public class LinkedListPalavra {
     public boolean contains(Palavra palavra) { // O(n)
         Node aux = head;
         for (int i = 0; i < count; i++) {
-            if (aux.palavra.equals(palavra)) {
+            if (aux.palavra.getPalavra().equals(palavra)) {
                 return true;
             }
             aux = aux.next;

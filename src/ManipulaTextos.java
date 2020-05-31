@@ -6,7 +6,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class ManipulaTextos {
-    public static void leLivro(LinkedListPalavra lp) {
+    public static void leLivro(LinkedListPalavra lp, ListaStopwords ls) {
         String linhas[] = new String[1000000];
         int numLinhas = 0;
         int numPaginas = 1;
@@ -34,9 +34,11 @@ public class ManipulaTextos {
             }
         }
 
-
+        int contWords = 0;
+        int contStopwords = 0;
         int aux = 0;
         while (aux < numPaginas) {
+
             for (int i = 1; i <= 40; i++) {
                 System.out.println("\nPalavras da linha " + i + ": ");
                 linhas[i - 1] = linhas[i - 1].replaceAll("\\t", " "); // substitui tab por espaco em branco
@@ -47,8 +49,11 @@ public class ManipulaTextos {
                     s = s.toLowerCase();
                     System.out.println("->" + s);
                     System.out.println(aux);
+                    contWords = contWords +1;
+                    if (ls.contains(s)) contStopwords = contStopwords +1;
                     Palavra p = new Palavra(s);
-                    lp.add(p);
+                    if(lp.contains(p)) p.inserePagina(aux);
+                    else lp.add(p);
                 }
 
             }

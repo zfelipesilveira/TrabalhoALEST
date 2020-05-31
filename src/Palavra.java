@@ -1,7 +1,7 @@
 public class Palavra {
     private String palavra;
     private int ocorrencias;
-    private LinkedListOfInteger listapaginas;
+    private ListaPaginas listapaginas;
 
     public Palavra(String palavra){
         this.palavra = palavra;
@@ -11,11 +11,15 @@ public class Palavra {
         return palavra;
     }
 
-    public LinkedListOfInteger getListaPaginas(){
+    public ListaPaginas getListaPaginas(){
         return listapaginas;
     }
    
     public int getOcorrencias(){
         return ocorrencias;
+    }
+
+    public void inserePagina(Integer pagina){
+        listapaginas.add(pagina);
     }
 }
