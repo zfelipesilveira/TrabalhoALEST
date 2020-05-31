@@ -37,10 +37,11 @@ public class ManipulaTextos {
         int contWords = 0;
         int contStopwords = 0;
         int aux = 0;
-        //while (aux < numPaginas) {
-        for(int j = 0; j<=numPaginas; j++){
-            for (int i = 1; i <= 40; i++) {
+        int pagAtual = 1;
+        //while(aux < numPaginas){
+            for (int i = 1; i<=3343 ; i++) {
                 //System.out.println("\nPalavras da linha " + i + ": ");
+                if (i%40==0) pagAtual = pagAtual +1;
                 linhas[i - 1] = linhas[i - 1].replaceAll("\\t", " "); // substitui tab por espaco em branco
                 linhas[i - 1] = linhas[i - 1].replaceAll(",", ""); // para remover vírgulas
                 linhas[i - 1] = linhas[i - 1].replaceAll("\\.", ""); // remove ponto final
@@ -52,14 +53,18 @@ public class ManipulaTextos {
                     contWords = contWords + 1;
                     if (ls.contains(s)) contStopwords = contStopwords + 1;
                     Palavra p = new Palavra(s);
-                    if (lp.contains(s)) p.inserePagina(aux);
-                    else lp.add(p);
+                    if (lp.contains(s)) p.inserePagina(pagAtual);
+                    if (!ls.contains(s) && !lp.contains(s)) lp.add(p);
+                    if (lp.contains(s)) p.inserePagina(pagAtual);
+
                 }
             }
-            //}
+            aux++;
+
+         //   }
             //System.out.println(aux);
             //aux++;
-        }
+
         //System.out.println(contStopwords);
         //System.out.println(contWords);
     }
