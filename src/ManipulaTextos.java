@@ -55,7 +55,9 @@ public class ManipulaTextos {
                     Palavra p = new Palavra(s);
                     if (lp.contains(s)) p.inserePagina(pagAtual);
                     if (!ls.contains(s) && !lp.contains(s)) lp.add(p);
-                    if (lp.contains(s)) p.inserePagina(pagAtual);
+                    if (lp.contains(s)){
+                        lp.AdicionaPagina(s, pagAtual);
+                    }
 
                 }
             }

@@ -321,6 +321,31 @@ public class LinkedListPalavra {
         return false;
     }
 
+    public Palavra buscarPalavra(String pal) { // O(n)
+        Node aux = head;
+        for (int i = 0; i < count; i++) {
+            Palavra p1= aux.palavra;
+            if (aux.palavra.getPalavra().equals(pal)) {
+                return p1;
+            }
+            aux = aux.next;
+        }
+        return null;
+    }
+
+    public void AdicionaPagina(String pal, int n){
+        Node aux = head;
+        for (int i = 0; i < count; i++) {
+            Palavra p1= aux.palavra;
+            if (aux.palavra.getPalavra().equals(pal)) {
+                //arrumar aqui
+                p1.inserePagina(n);
+            }
+            aux = aux.next;
+        }
+
+    }
+
     /**
      * Retorna um arranjo com uma copia de um subconjunto dos elementos da
      * lista.
