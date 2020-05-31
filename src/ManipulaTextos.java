@@ -45,18 +45,26 @@ public class ManipulaTextos {
                 linhas[i - 1] = linhas[i - 1].replaceAll("\\t", " "); // substitui tab por espaco em branco
                 linhas[i - 1] = linhas[i - 1].replaceAll(",", ""); // para remover vírgulas
                 linhas[i - 1] = linhas[i - 1].replaceAll("\\.", ""); // remove ponto final
+                linhas[i - 1] = linhas[i - 1].replaceAll(":", "");
+                linhas[i - 1] = linhas[i - 1].replaceAll(";", "");
+                linhas[i - 1] = linhas[i - 1].replaceAll("!", "");
+                linhas[i - 1] = linhas[i - 1].replaceAll("\\)", "");
+                linhas[i - 1] = linhas[i - 1].replaceAll("\\(", "");
+
+
+
                 String[] tokens = linhas[i - 1].split(" "); // divide a string pelo espaço em branco
                 for (String s : tokens) {
                     s = s.toLowerCase();
                     //System.out.println("->" + s);
                     //System.out.println(aux);
-                    contWords = contWords + 1;
-                    if (ls.contains(s)) contStopwords = contStopwords + 1;
-                    Palavra p = new Palavra(s);
+                    contWords = contWords + 1; // conta palavras no total
+                    if (ls.contains(s)) contStopwords = contStopwords + 1; // conta as stopwords
+                    Palavra p = new Palavra(s); // cria a palavra para o índice
                     if (lp.contains(s)) p.inserePagina(pagAtual);
-                    if (!ls.contains(s) && !lp.contains(s)) lp.add(p);
+                    if (!ls.contains(s) && !lp.contains(s)) lp.add(p); // SE a palavra não é stopword E ainda não está no índice, ela é adicionada na lista de palavras.
                     if (lp.contains(s)){
-                        lp.AdicionaPagina(s, pagAtual);
+                        lp.AdicionaPagina(s, pagAtual);  // se a lista de página já possui a palavra, a palavra recebe o número da página em que ela aparece.
                     }
 
                 }
