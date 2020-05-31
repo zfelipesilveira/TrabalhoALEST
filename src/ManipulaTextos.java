@@ -26,13 +26,13 @@ public class ManipulaTextos {
             System.err.format("Erro na leitura do arquivo: ", e);
         }
 
-        int n = 0;
-        for (int i = 1; i <= numPaginas; i++) {
-            System.out.println("--------------------- Pagina " + i + " ---------------------");
-            for (int j = 0; j < 40 && n < numLinhas; j++, n++) {
-                System.out.println(linhas[n]);
-            }
-        }
+//        int n = 0;
+//        for (int i = 1; i <= numPaginas; i++) {
+//            System.out.println("--------------------- Pagina " + i + " ---------------------");
+//            for (int j = 0; j < 40 && n < numLinhas; j++, n++) {
+//                System.out.println(linhas[n]);
+//            }
+//        }
 
         int contWords = 0;
         int contStopwords = 0;

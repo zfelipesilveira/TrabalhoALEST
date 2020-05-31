@@ -22,4 +22,9 @@ public class Palavra {
     public void inserePagina(Integer pagina){
         listapaginas.add(pagina);
     }
+
+    @Override
+    public String toString() {
+        return palavra + " -> " + listapaginas.toString();
+    }
 }
