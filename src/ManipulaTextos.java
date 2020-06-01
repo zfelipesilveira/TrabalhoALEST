@@ -126,7 +126,7 @@ public class ManipulaTextos {
         int numLinhas = 0;
         int numPaginas = 1;
 
-        Path path1 = Paths.get("alice.txt");// java.txt AQUI TEMOS QUE COLOCAR ALGUM DOS TEXTOS QUE ELA DEU
+        Path path1 = Paths.get("alice.txt");
 
         try (BufferedReader reader = Files.newBufferedReader(path1, Charset.defaultCharset())) {
             String line = null;
@@ -145,10 +145,14 @@ public class ManipulaTextos {
         int inicio = fim - 40;
         int n = inicio;
 
-        System.out.println("--------------------- Pagina " + pag + " ---------------------");
+        System.out.println("--------------------- Página " + pag + " ---------------------");
         for (int j = 0; j < 40 && n < fim; j++, n++) {
             System.out.println(linhas[n]);
+
         }
+        System.out.println("--------------------- Fim da Página " + pag + " ---------------------");
+        System.out.println("\n");
+
 
     }
 
@@ -157,7 +161,7 @@ public class ManipulaTextos {
         int numLinhas = 0;
         int numPaginas = 1;
 
-        Path path1 = Paths.get("alice.txt");// java.txt AQUI TEMOS QUE COLOCAR ALGUM DOS TEXTOS QUE ELA DEU
+        Path path1 = Paths.get("alice.txt");
 
         try (BufferedReader reader = Files.newBufferedReader(path1, Charset.defaultCharset())) {
             String line = null;
