@@ -64,15 +64,22 @@ public class LinkedListPalavra {
      *
      * @param palavra elemento a ser adicionado ao final da lista
      */
+    public static boolean isAlpha(String s) {
+        return s != null && s.matches("^[a-zA-Z]*$");
+    }
+
+
     public void add(Palavra palavra) { // O(1)
-        Node n = new Node(palavra);
-        if (head == null) {
-            head = n;
-        } else {
-            tail.next = n;
+        if(palavra.getPalavra().length()>2) {
+            Node n = new Node(palavra);
+            if (head == null) {
+                head = n;
+            } else {
+                tail.next = n;
+            }
+            tail = n;
+            count++;
         }
-        tail = n;
-        count++;
     }
 
     /**
@@ -125,6 +132,7 @@ public class LinkedListPalavra {
         // insercao no inicio (lista vazia ou nao), no meio, no fim
 
         // Primeiro: verificar se o índice é válido
+
         if (index < 0 || index > size())
             throw new IndexOutOfBoundsException();
 
@@ -149,7 +157,7 @@ public class LinkedListPalavra {
             n.next = ant.next;
             ant.next = n;
         }
-        count++;
+    count++;
     }
 
 
@@ -339,6 +347,18 @@ public class LinkedListPalavra {
             Palavra p1= aux.palavra;
             if (aux.palavra.getPalavra().equals(pal)) {
                 if(!p1.getListaPaginas().contains(n)) p1.inserePagina(n);
+            }
+            aux = aux.next;
+        }
+
+    }
+
+    public void AdicionaOcorrencia(String pal){
+        Node aux = head;
+        for (int i = 0; i < count; i++) {
+            Palavra p1= aux.palavra;
+            if (aux.palavra.getPalavra().equals(pal)) {
+                p1.addOcorrencias();
             }
             aux = aux.next;
         }
