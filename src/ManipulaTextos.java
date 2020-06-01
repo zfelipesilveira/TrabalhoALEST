@@ -177,11 +177,9 @@ public class ManipulaTextos {
         }
 
 
-        int contWords = 0;
-        int contStopwords = 0;
-        int aux = 0;
+
         int pagAtual = 1;
-        //while(aux < numPaginas){
+
         for (int i = 1; i<=3343 ; i++) {
             //System.out.println("\nPalavras da linha " + i + ": ");
             if (i%40==0) pagAtual = pagAtual +1;
@@ -199,10 +197,8 @@ public class ManipulaTextos {
             String[] tokens = linhas[i - 1].split(" "); // divide a string pelo espaço em branco
             for (String s : tokens) {
                 s = s.toLowerCase();
-                //System.out.println("->" + s);
-                //System.out.println(aux);
-                contWords = contWords + 1; // conta palavras no total
-                if (ls.contains(s)) contStopwords = contStopwords + 1; // conta as stopwords
+
+
                 Palavra p = new Palavra(s);
                 if (!ls.contains(s) && !lp.contains(s)) {
                     p.addOcorrencias();
