@@ -152,4 +152,7 @@ public class ManipulaTextos {
 
     }
 
+    public static void mostraPagina(int n, LinkedListPalavra lp){
+
+    }
 }
