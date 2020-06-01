@@ -1,3 +1,7 @@
+// métodos criados além dos já presentes no código de LinkedList desenvolvido com a professora:
+// da linha 331 até a linha 379, os métodos: buscarPalavra, AdicionaPagina, AdicionaOcorrencia e encontraMaisFrequente
+// método addEmOrdem, para inserir as palavras do índice já em ordem alfabética, foi desenvolvido mas teve falhas. Está na linha 166.
+
 public class LinkedListPalavra {
     private class Node {
 
@@ -64,9 +68,6 @@ public class LinkedListPalavra {
      *
      * @param palavra elemento a ser adicionado ao final da lista
      */
-    public static boolean isAlpha(String s) {
-        return s != null && s.matches("^[a-zA-Z]*$");
-    }
 
 
     public void add(Palavra palavra) { // O(1)
@@ -162,7 +163,7 @@ public class LinkedListPalavra {
 
 
 
-    public void addEmOrdem(Palavra novaPalavra){
+    public void addEmOrdem(Palavra novaPalavra){ // tentativa de um método que adicionasse em ordem alfabética
         if(count==0) add(novaPalavra);
         else if(novaPalavra.getPalavra().compareTo(get(0).getPalavra())<0){
             add(0, novaPalavra);
