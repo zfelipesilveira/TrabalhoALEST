@@ -25,9 +25,9 @@ public class App {
         opcao = in.nextInt();
         switch(opcao){
             case 1: System.out.println(lp.toString()); break;
-            case 2: break;
+            case 2: ManipulaTextos.calculaPorcentagem(); break;
             case 3: break;
-            case 4: pesquisaPalavra(); break;
+            case 4: pesquisaPalavra(lp); break;
             default: System.out.println("Fim do programa. "); break;
         }
         }while(opcao!=0);
@@ -35,14 +35,21 @@ public class App {
 
     }
 
-    public static void pesquisaPalavra(){
+    public static void pesquisaPalavra(LinkedListPalavra lp){
         Scanner in = new Scanner(System.in);
         System.out.println("Digite a palavra que deseja pesquisar: ");
         String umaPalavra = in.nextLine();
-        //chama o método que pesquisa a palavra e printa
+        pesquisarPalavra(umaPalavra, lp);
         System.out.println("Digite a pagina que deseja visualizar: ");
         int umaPagina = in.nextInt();
-        //chama o método que printa a pagina desejada
+        ManipulaTextos.mostraPagina(umaPagina);
+    }
+
+    public static void pesquisarPalavra(String s, LinkedListPalavra lp){
+        Palavra p = lp.buscarPalavra(s);
+        ListaPaginas paginas = p.getListaPaginas();
+        System.out.println("A palavra pesquisada aparece nas seguintes páginas: " + paginas);
+
     }
 
 }

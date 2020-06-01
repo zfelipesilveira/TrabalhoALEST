@@ -6,9 +6,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class ManipulaTextos {
-    public static boolean isAlpha(String s) {
-        return s != null && s.matches("^[a-zA-Z]*$");
-    }
+
 
     public static void leLivro(LinkedListPalavra lp, ListaStopwords ls) {
         String linhas[] = new String[1000000];
@@ -50,19 +48,19 @@ public class ManipulaTextos {
             String[] tokens = linhas[i - 1].split(" "); // divide a string pelo espaço em branco
             for (String s : tokens) {
                 s = s.toLowerCase();
-                //System.out.println("->" + s);
-                //System.out.println(aux);
+
                 contWords = contWords + 1; // conta palavras no total
                 if (ls.contains(s)) contStopwords = contStopwords + 1; // conta as stopwords
-                if(isAlpha(s)) {
-                    Palavra p = new Palavra(s); // cria a palavra para o índice
-                    //if (lp.contains(s)) p.inserePagina(pagAtual);
-                    if (!ls.contains(s) && !lp.contains(s))
-                        lp.add(p); // SE a palavra não é stopword E ainda não está no índice, ela é adicionada na lista de palavras.
-                    if (lp.contains(s)) {
-                        lp.AdicionaPagina(s, pagAtual);  // se a lista de página já possui a palavra, a palavra recebe o número da página em que ela aparece.
-                    }
+                Palavra p = new Palavra(s);
+                if (!ls.contains(s) && !lp.contains(s)) {
+                    p.addOcorrencias();
+                    lp.add(p); // SE a palavra não é stopword E ainda não está no índice, ela é adicionada na lista de palavras.
                 }
+                if (lp.contains(s)) {
+                    lp.AdicionaPagina(s, pagAtual);  // se a lista de página já possui a palavra, a palavra recebe o número da página em que ela aparece.
+                    lp.AdicionaOcorrencia(s);
+                }
+
             }
         }
 
@@ -174,13 +172,6 @@ public class ManipulaTextos {
             System.err.format("Erro na leitura do arquivo: ", e);
         }
 
-//        int n = 0;
-//        for (int i = 1; i <= numPaginas; i++) {
-//            System.out.println("--------------------- Pagina " + i + " ---------------------");
-//            for (int j = 0; j < 40 && n < numLinhas; j++, n++) {
-//                System.out.println(linhas[n]);
-//            }
-//        }
 
         int contWords = 0;
         int contStopwords = 0;
@@ -208,16 +199,10 @@ public class ManipulaTextos {
                 //System.out.println(aux);
                 contWords = contWords + 1; // conta palavras no total
                 if (ls.contains(s)) contStopwords = contStopwords + 1; // conta as stopwords
-                Palavra p = new Palavra(s); // cria a palavra para o índice
-//                if (lp.contains(s)){
-//                    p.inserePagina(pagAtual);
-//                    p.addOcorrencias();
-//                }
-
+                Palavra p = new Palavra(s);
                 if (!ls.contains(s) && !lp.contains(s)) {
                     p.addOcorrencias();
                     lp.add(p); // SE a palavra não é stopword E ainda não está no índice, ela é adicionada na lista de palavras.
-
                 }
                 if (lp.contains(s)) {
                     lp.AdicionaPagina(s, pagAtual);  // se a lista de página já possui a palavra, a palavra recebe o número da página em que ela aparece.
@@ -226,14 +211,7 @@ public class ManipulaTextos {
 
             }
         }
-        aux++;
 
-        //   }
-        //System.out.println(aux);
-        //aux++;
-
-        //System.out.println(contStopwords);
-        //System.out.println(contWords);
     }
 
 
