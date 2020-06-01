@@ -17,19 +17,19 @@ public class App {
         System.out.println("Bem-vindo(a) ao nosso trabalho de ALEST I; ");
         int opcao;
         do{
-        System.out.println("Digite 0 para sair do programa: ");
-        System.out.println("Digite 1 para exibir todo o índice remissivo: ");
-        System.out.println("Digite 2 para exibir o porcentual de stopwords do texto: ");
-        System.out.println("Digite 3 para encontrar a palavra mais frequente do texto: ");
-        System.out.println("Digite 4 para pesquisar uma palavra específica ");
-        opcao = in.nextInt();
-        switch(opcao){
-            case 1: System.out.println(lp.toString()); break;
-            case 2: mostraPorcentagem(ls); break;
-            case 3: mostraPalavraMaisFrequente(lp); break;
-            case 4: pesquisaPalavra(lp); break;
-            default: System.out.println("Fim do programa. "); break;
-        }
+            System.out.println("Digite 0 para sair do programa: ");
+            System.out.println("Digite 1 para exibir todo o índice remissivo: ");
+            System.out.println("Digite 2 para exibir o porcentual de stopwords do texto: ");
+            System.out.println("Digite 3 para encontrar a palavra mais frequente do texto: ");
+            System.out.println("Digite 4 para pesquisar uma palavra específica ");
+            opcao = in.nextInt();
+            switch(opcao){
+                case 1: System.out.println(lp.toString()); break;
+                case 2: mostraPorcentagem(ls); break;
+                case 3: mostraPalavraMaisFrequente(lp); break;
+                case 4: pesquisaPalavra(lp); break;
+                default: System.out.println("Fim do programa. "); break;
+            }
         }while(opcao!=0);
 
 
