@@ -345,6 +345,21 @@ public class LinkedListPalavra {
 
     }
 
+    public String encontraMaisFrequente(){
+        Node aux = head;
+        Palavra palavraMaisFrequente = aux.palavra;
+        int maisOcorrencias = aux.palavra.getOcorrencias();
+        for (int i = 0; i < count; i++) {
+            Palavra p1= aux.palavra;
+            if (aux.palavra.getOcorrencias()> maisOcorrencias) {
+                palavraMaisFrequente = p1;
+                maisOcorrencias = aux.palavra.getOcorrencias();
+            }
+            aux = aux.next;
+        }
+        return palavraMaisFrequente.getPalavra();
+    }
+
     /**
      * Retorna um arranjo com uma copia de um subconjunto dos elementos da
      * lista.
