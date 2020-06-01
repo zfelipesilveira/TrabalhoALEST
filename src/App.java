@@ -25,8 +25,8 @@ public class App {
         opcao = in.nextInt();
         switch(opcao){
             case 1: System.out.println(lp.toString()); break;
-            case 2: ManipulaTextos.calculaPorcentagem(); break;
-            case 3: break;
+            case 2: ManipulaTextos.calculaPorcentagem(ls); break;
+            case 3: mostraPalavraMaisFrequente(lp); break;
             case 4: pesquisaPalavra(lp); break;
             default: System.out.println("Fim do programa. "); break;
         }
@@ -49,6 +49,12 @@ public class App {
         Palavra p = lp.buscarPalavra(s);
         ListaPaginas paginas = p.getListaPaginas();
         System.out.println("A palavra pesquisada aparece nas seguintes páginas: " + paginas);
+
+    }
+
+    public static void mostraPalavraMaisFrequente(LinkedListPalavra lp){
+        String maisFrequente = lp.encontraMaisFrequente();
+        System.out.println("A palavra mais frequente do livro é: " + maisFrequente);
 
     }
 

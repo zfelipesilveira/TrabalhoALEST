@@ -67,7 +67,7 @@ public class ManipulaTextos {
 
     }
 
-    public static double calculaPorcentagem(LinkedListPalavra lp, ListaStopwords ls) {
+    public static double calculaPorcentagem(ListaStopwords ls) {
         String linhas[] = new String[1000000];
         int numLinhas = 0;
         int numPaginas = 1;
