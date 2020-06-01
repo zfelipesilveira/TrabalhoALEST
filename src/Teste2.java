@@ -14,6 +14,8 @@ public class Teste2 {
         System.out.println("A porcentagem de stopwords do livro é de aproximadamente " + porcentagem + "%");
 
         pesquisarPalavra("alice", lp);
+
+        ManipulaTextos.mostraPagina(1);
         
 
         

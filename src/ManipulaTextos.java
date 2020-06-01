@@ -152,7 +152,36 @@ public class ManipulaTextos {
 
     }
 
-    public static void mostraPagina(int n, LinkedListPalavra lp){
+    public static void mostraPagina(int pag){
+        String linhas[] = new String[1000000];
+        int numLinhas = 0;
+        int numPaginas = 1;
+
+        Path path1 = Paths.get("alice.txt");// java.txt AQUI TEMOS QUE COLOCAR ALGUM DOS TEXTOS QUE ELA DEU
+
+        try (BufferedReader reader = Files.newBufferedReader(path1, Charset.defaultCharset())) {
+            String line = null;
+            while ((line = reader.readLine()) != null) {
+                linhas[numLinhas] = line;
+                numLinhas++;
+                if (numLinhas % 40 == 0) {
+                    numPaginas++;
+                }
+            }
+        } catch (IOException e) {
+            System.err.format("Erro na leitura do arquivo: ", e);
+        }
+
+        int fim = pag * 40;
+        int inicio = fim - 40;
+        int n = inicio;
+
+        System.out.println("--------------------- Pagina " + pag + " ---------------------");
+        for (int j = 0; j < 40 && n < fim; j++, n++) {
+            System.out.println(linhas[n]);
+        }
+
+
 
     }
 }
