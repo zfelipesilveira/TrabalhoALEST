@@ -111,9 +111,7 @@ public class ManipulaTextos {
         double porcentagem = 0;
         double contWords = 0;
         double contStopwords = 0;
-        int aux = 0;
         int pagAtual = 1;
-        //while(aux < numPaginas){
         for (int i = 1; i<=3343 ; i++) {
             //System.out.println("\nPalavras da linha " + i + ": ");
             if (i%40==0) pagAtual = pagAtual +1;
@@ -146,22 +144,11 @@ public class ManipulaTextos {
 
             }
         }
-        aux++;
         porcentagem = ((contStopwords/contWords) * 100);
         porcentagem = porcentagem*100;
         porcentagem = Math.floor(porcentagem);
         porcentagem = porcentagem/100;
         return porcentagem;
 
-//        double a=3.545555555; // just assigning your decimal to a variable
-//        a=a*100;              // this sets a to 354.555555
-//        a=Math.floor(a);      // this sets a to 354
-//        a=a/100;
-        //   }
-        //System.out.println(aux);
-        //aux++;
-
-        //System.out.println(contStopwords);
-        //System.out.println(contWords);
     }
 }
