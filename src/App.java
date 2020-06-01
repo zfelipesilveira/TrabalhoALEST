@@ -25,7 +25,7 @@ public class App {
         opcao = in.nextInt();
         switch(opcao){
             case 1: System.out.println(lp.toString()); break;
-            case 2: ManipulaTextos.calculaPorcentagem(ls); break;
+            case 2: mostraPorcentagem(ls); break;
             case 3: mostraPalavraMaisFrequente(lp); break;
             case 4: pesquisaPalavra(lp); break;
             default: System.out.println("Fim do programa. "); break;
@@ -56,6 +56,12 @@ public class App {
         String maisFrequente = lp.encontraMaisFrequente();
         System.out.println("A palavra mais frequente do livro é: " + maisFrequente);
 
+    }
+
+    public static void mostraPorcentagem(ListaStopwords ls){
+        double porcentagem;
+        porcentagem = ManipulaTextos.calculaPorcentagem(ls);
+        System.out.println("A porcentagem de stopwords do livro é de aproximadamente " + porcentagem + "%" + "\n");
     }
 
 }
