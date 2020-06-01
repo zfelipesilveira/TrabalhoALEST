@@ -24,6 +24,10 @@ public class Palavra {
         listapaginas.add(pagina);
     }
 
+    public void addOcorrencias(){
+        ocorrencias = ocorrencias + 1;
+    }
+
     @Override
     public String toString() {
         return palavra + " -> " + listapaginas.toString();
