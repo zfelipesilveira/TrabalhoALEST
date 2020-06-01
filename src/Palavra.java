@@ -27,9 +27,7 @@ public class Palavra {
     public void addOcorrencias(){
         ocorrencias = ocorrencias + 1;
     }
-    public static boolean isAlpha(String s) {
-        return s != null && s.matches("^[a-zA-Z]*$");
-    }
+
     @Override
     public String toString() {
         return palavra + " -> " + listapaginas.toString();
