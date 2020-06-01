@@ -12,8 +12,17 @@ public class Teste2 {
         double porcentagem;
         porcentagem = ManipulaTextos.calculaPorcentagem(lp, ls);
         System.out.println("A porcentagem de stopwords do livro é de aproximadamente " + porcentagem + "%");
+
+        pesquisarPalavra("alice", lp);
         
-       
+
         
+    }
+
+    public static void pesquisarPalavra(String s, LinkedListPalavra lp){
+        Palavra p = lp.buscarPalavra(s);
+        ListaPaginas paginas = p.getListaPaginas();
+        System.out.println("A palavra pesquisada aparece nas seguintes páginas: " + paginas);
+
     }
 }
