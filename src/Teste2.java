@@ -8,7 +8,10 @@ public class Teste2 {
         LinkedListPalavra lp = new LinkedListPalavra();
         ManipulaTextos.leLivro(lp, ls);
 
-        ManipulaTextos.calculaPorcentagem(lp, ls);
+
+        double porcentagem;
+        porcentagem = ManipulaTextos.calculaPorcentagem(lp, ls);
+        System.out.println("A porcentagem de stopwords do livro é de aproximadamente " + porcentagem + "%");
         
        
         

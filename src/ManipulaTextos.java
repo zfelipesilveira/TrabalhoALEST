@@ -79,7 +79,7 @@ public class ManipulaTextos {
         //System.out.println(contWords);
     }
 
-    public static void calculaPorcentagem(LinkedListPalavra lp, ListaStopwords ls) {
+    public static double calculaPorcentagem(LinkedListPalavra lp, ListaStopwords ls) {
         String linhas[] = new String[1000000];
         int numLinhas = 0;
         int numPaginas = 1;
@@ -109,8 +109,8 @@ public class ManipulaTextos {
 
 
         double porcentagem = 0;
-        int contWords = 0;
-        int contStopwords = 0;
+        double contWords = 0;
+        double contStopwords = 0;
         int aux = 0;
         int pagAtual = 1;
         //while(aux < numPaginas){
@@ -141,14 +141,22 @@ public class ManipulaTextos {
 //                if (lp.contains(s)){
 //                    lp.AdicionaPagina(s, pagAtual);  // se a lista de página já possui a palavra, a palavra recebe o número da página em que ela aparece.
 //                }
-                System.out.println("Palavras: " + contWords);
-                System.out.println("Stopwords: " + contStopwords);
+//                System.out.println("Palavras: " + contWords);
+//                System.out.println("Stopwords: " + contStopwords);
 
             }
         }
         aux++;
+        porcentagem = ((contStopwords/contWords) * 100);
+        porcentagem = porcentagem*100;
+        porcentagem = Math.floor(porcentagem);
+        porcentagem = porcentagem/100;
+        return porcentagem;
 
-
+//        double a=3.545555555; // just assigning your decimal to a variable
+//        a=a*100;              // this sets a to 354.555555
+//        a=Math.floor(a);      // this sets a to 354
+//        a=a/100;
         //   }
         //System.out.println(aux);
         //aux++;
